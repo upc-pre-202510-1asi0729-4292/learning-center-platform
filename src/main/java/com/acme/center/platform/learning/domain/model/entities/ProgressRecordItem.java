@@ -62,6 +62,14 @@ public class ProgressRecordItem extends AuditableModel {
         return ProgressStatus.NO_STARTED.equals(this.status);
     }
 
+    public boolean isInProgressOrCompleted() {
+        return ProgressStatus.STARTED.equals(this.status) || ProgressStatus.COMPLETED.equals(this.status);
+    }
+
+    public boolean isNotStartedOrCompleted() {
+        return ProgressStatus.NO_STARTED.equals(this.status) || ProgressStatus.COMPLETED.equals(this.status);
+    }
+
     public long calculateDaysElapsed() {
         if(ProgressStatus.NO_STARTED.equals(this.status)) return 0;
         var defaultTimeZone = ZoneId.systemDefault();
