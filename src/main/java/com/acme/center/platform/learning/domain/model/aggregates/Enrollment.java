@@ -2,6 +2,8 @@ package com.acme.center.platform.learning.domain.model.aggregates;
 
 import com.acme.center.platform.learning.domain.model.valueobjects.AcmeStudentRecordId;
 import com.acme.center.platform.learning.domain.model.valueobjects.EnrollmentStatus;
+import com.acme.center.platform.learning.domain.model.valueobjects.ProgressRecord;
+import com.acme.center.platform.learning.domain.model.valueobjects.TutorialId;
 import com.acme.center.platform.shared.domain.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -22,6 +24,9 @@ public class Enrollment extends AuditableAbstractAggregateRoot<Enrollment> {
     private Course course;
 
     private EnrollmentStatus status;
+
+    @Embedded
+    private ProgressRecord progressRecord;
 
     protected Enrollment() {
         // Default constructor for JPA
@@ -65,5 +70,14 @@ public class Enrollment extends AuditableAbstractAggregateRoot<Enrollment> {
     }
     public boolean isRequested() {
         return EnrollmentStatus.REQUESTED.equals(this.status);
+    }
+
+    public void completeTutorial(TutorialId tutorialId) {
+        this.progressRecord.completeTutorial(tutorialId, course.getLearningPath());
+        // TODO: Publish a domain event for tutorial completion
+    }
+
+    public void startTutorial(TutorialId tutorialId) {
+        this.progressRecord.startTutorial(tutorialId);
     }
 }
