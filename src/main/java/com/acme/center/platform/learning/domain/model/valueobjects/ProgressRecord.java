@@ -55,4 +55,11 @@ public class ProgressRecord {
         ProgressRecordItem nextProgressRecordItem = new ProgressRecordItem(progressRecordItem.getEnrollment(), nextTutorialId);
         this.progressRecordItems.add(nextProgressRecordItem);
     }
+
+    public long calculateDaysElapsedForEnrollment(Enrollment enrollment) {
+        return progressRecordItems.stream()
+                .filter(progressRecordItem -> progressRecordItem.getEnrollment().equals(enrollment))
+                .mapToLong(ProgressRecordItem::calculateDaysElapsed)
+                .sum();
+    }
 }
