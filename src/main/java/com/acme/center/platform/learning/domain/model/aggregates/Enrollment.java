@@ -1,5 +1,6 @@
 package com.acme.center.platform.learning.domain.model.aggregates;
 
+import com.acme.center.platform.learning.domain.model.events.TutorialCompletedEvent;
 import com.acme.center.platform.learning.domain.model.valueobjects.AcmeStudentRecordId;
 import com.acme.center.platform.learning.domain.model.valueobjects.EnrollmentStatus;
 import com.acme.center.platform.learning.domain.model.valueobjects.ProgressRecord;
@@ -74,7 +75,7 @@ public class Enrollment extends AuditableAbstractAggregateRoot<Enrollment> {
 
     public void completeTutorial(TutorialId tutorialId) {
         this.progressRecord.completeTutorial(tutorialId, course.getLearningPath());
-        // TODO: Publish a domain event for tutorial completion
+        this.registerEvent(new TutorialCompletedEvent(this, this.getId(), tutorialId));
     }
 
     public void startTutorial(TutorialId tutorialId) {
