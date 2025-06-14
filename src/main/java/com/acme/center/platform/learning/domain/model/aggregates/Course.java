@@ -1,5 +1,6 @@
 package com.acme.center.platform.learning.domain.model.aggregates;
 
+import com.acme.center.platform.learning.domain.model.commands.CreateCourseCommand;
 import com.acme.center.platform.learning.domain.model.valueobjects.LearningPath;
 import com.acme.center.platform.learning.domain.model.valueobjects.TutorialId;
 import com.acme.center.platform.shared.domain.aggregates.AuditableAbstractAggregateRoot;
@@ -30,6 +31,12 @@ public class Course extends AuditableAbstractAggregateRoot<Course> {
         this.learningPath = new LearningPath();
     }
 
+    public Course(CreateCourseCommand command) {
+        this();
+        this.title = command.title();
+        this.description = command.description();
+    }
+
     /**
      * Update the course information.
      * @param title the new title of the course
@@ -53,5 +60,4 @@ public class Course extends AuditableAbstractAggregateRoot<Course> {
     public void addTutorialToLearningPath(TutorialId tutorialId, TutorialId nextTutorialId) {
         this.learningPath.addItem(this, tutorialId, nextTutorialId);
     }
-
 }

@@ -26,7 +26,7 @@ public class LearningPath {
                 .orElse(null);
     }
 
-    private LearningPathItem getLearningPathItemWithTutorialId(TutorialId tutorialId) {
+    public LearningPathItem getLearningPathItemWithTutorialId(TutorialId tutorialId) {
         return this.getFirstLearningPathItemWhere(
                 item -> item.getTutorialId().equals(tutorialId));
     }
