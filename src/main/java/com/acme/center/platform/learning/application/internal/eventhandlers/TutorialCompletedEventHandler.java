@@ -3,7 +3,6 @@ package com.acme.center.platform.learning.application.internal.eventhandlers;
 import com.acme.center.platform.learning.domain.model.commands.UpdateStudentMetricsOnTutorialCompletedCommand;
 import com.acme.center.platform.learning.domain.model.events.TutorialCompletedEvent;
 import com.acme.center.platform.learning.domain.model.queries.GetEnrollmentByIdQuery;
-import com.acme.center.platform.learning.domain.services.EnrollmentCommandService;
 import com.acme.center.platform.learning.domain.services.EnrollmentQueryService;
 import com.acme.center.platform.learning.domain.services.StudentCommandService;
 import org.springframework.context.event.EventListener;

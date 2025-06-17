@@ -3,6 +3,7 @@ package com.acme.center.platform.shared.infrastructure.persistence.jpa.configura
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy;
 import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
+
 import static io.github.encryptorcode.pluralize.Pluralize.pluralize;
 
 /**
