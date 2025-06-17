@@ -1,4 +1,4 @@
-package com.acme.center.platform.shared.domain.entities;
+package com.acme.center.platform.shared.domain.model.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

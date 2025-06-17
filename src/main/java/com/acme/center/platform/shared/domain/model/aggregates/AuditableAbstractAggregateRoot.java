@@ -1,4 +1,4 @@
-package com.acme.center.platform.shared.domain.aggregates;
+package com.acme.center.platform.shared.domain.model.aggregates;
 
 import jakarta.persistence.*;
 import lombok.Getter;
