@@ -5,7 +5,7 @@ import com.acme.center.platform.learning.domain.model.valueobjects.AcmeStudentRe
 import com.acme.center.platform.learning.domain.model.valueobjects.EnrollmentStatus;
 import com.acme.center.platform.learning.domain.model.valueobjects.ProgressRecord;
 import com.acme.center.platform.learning.domain.model.valueobjects.TutorialId;
-import com.acme.center.platform.shared.domain.aggregates.AuditableAbstractAggregateRoot;
+import com.acme.center.platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;

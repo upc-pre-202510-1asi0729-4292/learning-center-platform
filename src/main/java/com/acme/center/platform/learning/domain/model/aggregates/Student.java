@@ -3,7 +3,7 @@ package com.acme.center.platform.learning.domain.model.aggregates;
 import com.acme.center.platform.learning.domain.model.valueobjects.AcmeStudentRecordId;
 import com.acme.center.platform.learning.domain.model.valueobjects.ProfileId;
 import com.acme.center.platform.learning.domain.model.valueobjects.StudentPerformanceMetricSet;
-import com.acme.center.platform.shared.domain.aggregates.AuditableAbstractAggregateRoot;
+import com.acme.center.platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;

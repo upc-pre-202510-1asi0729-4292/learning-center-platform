@@ -3,7 +3,7 @@ package com.acme.center.platform.learning.domain.model.aggregates;
 import com.acme.center.platform.learning.domain.model.commands.CreateCourseCommand;
 import com.acme.center.platform.learning.domain.model.valueobjects.LearningPath;
 import com.acme.center.platform.learning.domain.model.valueobjects.TutorialId;
-import com.acme.center.platform.shared.domain.aggregates.AuditableAbstractAggregateRoot;
+import com.acme.center.platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import lombok.Getter;
