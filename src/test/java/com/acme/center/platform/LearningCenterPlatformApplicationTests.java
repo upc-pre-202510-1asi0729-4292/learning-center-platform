@@ -8,6 +8,7 @@ class LearningCenterPlatformApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("Nothing to do here");
     }
 
 }
